@@ -26,7 +26,7 @@ node_t* build_list(int* wins, int* years, int size) {
             if (i == 0){  // head: year0 win0. tail: year0, win0. 
                 head = newNode; 
                 tail = newNode;
-            } else { .  // i = 1: head: year0, win0. tail->next: year1 win1. tail: year1 win1. 
+            } else {   // i = 1: head: year0, win0. tail->next: year1 win1. tail: year1 win1. 
                 tail->next = newNode; 
                 tail = newNode;
             }
