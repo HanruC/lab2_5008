@@ -4,8 +4,8 @@
 typedef struct node { 
     int year;
     int wins;
-    struct node* next
-} node_t;
+    struct node* next;
+}node_t;
 
 node_t* makeNode(int wins, int year, node_t* next) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
