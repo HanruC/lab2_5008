@@ -10,7 +10,7 @@ typedef struct node {
 node_t* makeNode(int wins, int year, node_t* next) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
 
-    newNode->num_wins = wins;
+    newNode->wins = wins;
     newNode->year = year;
     newNode-next = next;
     return newNode; 
