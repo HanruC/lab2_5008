@@ -12,7 +12,7 @@ node_t* makeNode(int wins, int year, node_t* next) {
 
     newNode->wins = wins;
     newNode->year = year;
-    newNode-next = next;
+    newNode->next = next;
     return newNode; 
 }
 
