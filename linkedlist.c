@@ -57,7 +57,7 @@ int main()
     int test_years[5] = {2018, 2017, 2016, 2015, 2014};
     int test_wins[5] = {108, 93, 93, 78, 71};
 
-    note_t* newlist = build_list(test_years, test_wins, 5);
+    node_t* newlist = build_list(test_years, test_wins, 5);
     printList(newlist);
 
     // TODO: Implement me!
