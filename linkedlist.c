@@ -46,7 +46,7 @@ void printList(node_t* head){
 
 void free_list(node_t* head){
     
-    if (pointer = NULL){
+    if (head = NULL){
         return;
     }
     node_t* pointer = head;
