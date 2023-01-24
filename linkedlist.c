@@ -7,6 +7,9 @@ typedef struct node {
     struct node* next;
 }node_t;
 
+typedef struct findingyear {
+    
+}
 node_t* makeNode(int wins, int year, node_t* next) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
     if (newNode == NULL){
@@ -58,6 +61,7 @@ void free_list(node_t* head){
     head = NULL;
 }
 
+int find_year()
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
 // You may create as many helper functions as you like.
