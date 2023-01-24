@@ -44,8 +44,18 @@ void printList(node_t* head){
     pointer = pointer->next; 
 }
 
-void free_list(){
-
+void free_list(node_t* head){
+    
+    if (pointer = NULL){
+        return;
+    }
+    node_t* pointer = head;
+    while(pointer != NULL){
+        node_t* storage = pointer;
+        pointer = pointer->next;
+        free(storage);
+    }
+    head = NULL;
 }
 
 // TODO: Write your functions here
