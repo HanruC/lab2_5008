@@ -91,7 +91,7 @@ void free_list(node_t* head){
 node_t* find_year(lst_t* list, int year){
     node_t* pointer = list->head; 
     if (pointer == NULL){
-        return;
+        return NULL;
     }
     while (pointer != NULL){
         if (pointer->year == year){
@@ -99,6 +99,7 @@ node_t* find_year(lst_t* list, int year){
         }
         pointer = pointer->next;
     }
+    return NULL;
 }
 
 // TODO: Write your functions here
