@@ -144,8 +144,8 @@ int remove_year(lst_t* list, int year_to_remove){
         list->size--;
         return 1;
     }
-    return 0;
     }
+    return 0;
 }
 
 // TODO: Write your functions here
