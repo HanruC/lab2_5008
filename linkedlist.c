@@ -61,10 +61,10 @@ void free_list(node_t* head){
 }
 
 
-//int find_year(node_t* head, int year_list){
-    //node_t* pointer = head; 
+int find_year(node_t* head, int year_list){
+    node_t* pointer = head; 
     
-//}
+}
 
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
