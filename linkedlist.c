@@ -114,7 +114,7 @@ int main()
     for (int i = 0; i < 5; i++) {
         add_nodes(newlist, test_years[i], test_wins[i]);
     }
-    print_list(newlist->head);
+    printList(newlist->head);
 
     int search_year = 2016;
     node_t* found_year = find_year(newlist, search_year);
