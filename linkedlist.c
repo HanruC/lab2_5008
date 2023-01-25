@@ -14,13 +14,24 @@ typedef struct lst {
 
 // create a list to store each node in the list. 
 lst_t* newList(){
-    lst_t* newList = (node_t*)malloc(sizeof(lst_t));
+    lst_t* newList = (lst_t*)malloc(sizeof(lst_t));
     if (newList == NULL){
         return NULL;
     }
     newList->head =NULL;
     newList->size =0;
     return newList;
+}
+
+node_t* makeNode(int wins, int year, node_t* next) {
+    node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
+    if (newNode == NULL){
+        return NULL;
+    }
+    newNode->wins = wins;
+    newNode->year = year;
+    newNode->next = next;
+    return newNode; 
 }
 
 // now we need to add the node into the list, which is inserting the nodes in the front. 
@@ -31,17 +42,7 @@ void add_nodes(lst_t* list, int year, int wins){
     newNode->next = list->head; //1. new->next:NULL (list->head was set to be null at first) 2. new->next: the first makenode. 3. new->next: the second makenode. 
     list->head = newNode; // 1. list->head set to be the first makenode. 2. the second makenode. 3. the third makenode. 
     // 5 4 3 2 1 from the end insert the front. 
-    list->size++
-}
-node_t* makeNode(int wins, int year, node_t* next) {
-    node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
-    if (newNode == NULL){
-        return NULL;
-    }
-    newNode->wins = wins;
-    newNode->year = year;
-    newNode->next = next;
-    return newNode; 
+    list->size++;
 }
 
 node_t* build_list(int* wins, int* years, int size) { 
