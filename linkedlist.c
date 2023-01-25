@@ -120,7 +120,7 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
     return 0;
 
 }
-void remove_wins_helper(wins){
+void remove_wins_helper(int wins){
     free(wins);
 }
 
