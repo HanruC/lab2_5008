@@ -119,11 +119,11 @@ int main()
 
     int search_year = 2016;
     node_t* found_year = find_year(newlist, search_year);
-    if (found_year != NULL) {
-        printf("Year: %d, Wins: %d\n", found_year->year, found_year->wins);
-    } else {
-        printf("Year %d not found in the list.\n", search_year);
-    }
+    //if (found_year != NULL) {
+        //printf("Year: %d, Wins: %d\n", found_year->year, found_year->wins);
+    //} else {
+        //printf("Year %d not found in the list.\n", search_year);
+    //}
 
     free_list(newlist->head);
     free(newlist);
