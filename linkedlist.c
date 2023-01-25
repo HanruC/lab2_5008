@@ -21,8 +21,8 @@ node_t* makeNode(int wins, int year, node_t* next) {
 node_t* build_list(int* wins, int* years, int size) { 
         node_t* head = NULL;
         node_t* tail = NULL;
-        int i;
-        for (i = 0; i < size; i++){
+        
+        for (int i = 0; i < size; i++){
             node_t* newNode = makeNode(years[i], wins[i], NULL);
             if (i == 0){  // head: year0 win0. tail: year0, win0. 
                 head = newNode; 
@@ -59,26 +59,13 @@ void free_list(node_t* head){
     }
     head = NULL;
 }
-/**
- 
 
-//int find_year(node_t* head){
+
+//int find_year(node_t* head, int year_list){
     //node_t* pointer = head; 
-    int index = 0
-    int count = 0;
-    while (pointer != NULL ){
-        if (count == index){
-            return (pointer->year);
-        }
-        count++;
-        index = inde + 2;
-        pointer = pointer->next;
-    }
     
+//}
 
-}
-*/
-//int find_year()
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
 // You may create as many helper functions as you like.
