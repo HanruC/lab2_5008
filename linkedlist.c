@@ -41,7 +41,6 @@ void printList(node_t* head){
     }
     node_t* pointer = head;
     if (pointer != NULL){
-        pointer = pointer->next;
         printList(pointer->next);
         printf("%d, %d wins\n", pointer->year, pointer->wins);
     }
