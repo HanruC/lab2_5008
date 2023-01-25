@@ -118,6 +118,7 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
         }
         pointer = pointer->next; // check the next one if not found. 
     }
+    return 0;
 
 }
 
