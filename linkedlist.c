@@ -105,7 +105,6 @@ node_t* find_year(lst_t* list, int year){
 // compare to the year to find. 
 int insert_year(lst_t* list, int year_to_find, int year, int wins){
     node_t* pointer = list->head; 
-    node_t* prev = NULL;
     if (pointer == NULL){
         return 0;
     }
@@ -120,6 +119,33 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
     }
     return 0;
 
+}
+
+int remove_year(lst_t* list, int year_to_remove){
+    node_t* pointer = list->head;
+    node_t* prev = NULL; 
+
+    if (pointer == NULL){
+        return 0;
+    }
+    while (pointer!= NULL && pointer->year != year_to_remove){
+        prev = pointer;
+        pointer = pointer->next;
+    if (pointer != NULL && pointer->year == year_to_remove){
+        if (prev != NULL){
+            prev->next = pointer->next;
+        }else if(pointer->next == NULL){
+            prev->next = NULL;
+        } 
+        else {
+            list->head = pointer->next; //prev = null which is the first element. 
+        }
+        free(pointer);
+        list->size--;
+        return 1;
+    }
+    return 0;
+    }
 }
 
 // TODO: Write your functions here
