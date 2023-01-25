@@ -110,7 +110,7 @@ int main()
     int test_years[5] = {2018, 2017, 2016, 2015, 2014};
     int test_wins[5] = {108, 93, 93, 78, 71};
 
-    lit_t* newlist = create_list();
+    lst_t* newlist = create_list();
     for (int i = 0; i < 5; i++) {
         add_node(newlist, test_years[i], test_wins[i]);
     }
