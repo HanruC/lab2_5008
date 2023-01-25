@@ -150,7 +150,7 @@ int main()
     int new_wins = 15;
     int result = insert_year(newlist, year_to_find, new_year, new_wins);
     if (result == 1){
-        printf("Inserted");
+        printf("Inserted\n");
         printList(newlist->head);
     }else{
         printf("failed");
