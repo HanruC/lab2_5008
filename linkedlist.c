@@ -7,9 +7,6 @@ typedef struct node {
     struct node* next;
 }node_t;
 
-typedef struct findingyear {
-    
-}
 node_t* makeNode(int wins, int year, node_t* next) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
     if (newNode == NULL){
@@ -43,8 +40,9 @@ void printList(node_t* head){
         return;
     }
     node_t* pointer = head;
-    printf("%d, %d wins\n", pointer->year, pointer->wins);
     pointer = pointer->next; 
+    printf("%d, %d wins\n", pointer->year, pointer->wins);
+    
 }
 
 void free_list(node_t* head){
@@ -60,8 +58,26 @@ void free_list(node_t* head){
     }
     head = NULL;
 }
+/**
+ 
 
-int find_year()
+//int find_year(node_t* head){
+    //node_t* pointer = head; 
+    int index = 0
+    int count = 0;
+    while (pointer != NULL ){
+        if (count == index){
+            return (pointer->year);
+        }
+        count++;
+        index = inde + 2;
+        pointer = pointer->next;
+    }
+    
+
+}
+*/
+//int find_year()
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
 // You may create as many helper functions as you like.
