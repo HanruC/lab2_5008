@@ -35,16 +35,17 @@ node_t* build_list(int* wins, int* years, int size) {
         return head;
 }
 
-void printList(node_t* head){
+void printList(node_t* head, node_t* size){
     if (head == NULL){
         return;
     }
     node_t* pointer = head;
-    pointer = pointer->next; 
-    printf("%d, %d wins\n", pointer->year, pointer->wins);
-    
+    int i;
+    for (i = 0; i < size; i++){
+        printf("%d, %d wins\n", pointer->year, pointer->wins);
+        pointer = pointer->next;
+    }
 }
-
 void free_list(node_t* head){
     
     if (head = NULL){
