@@ -50,7 +50,7 @@ node_t* build_list(int* wins, int* years, int size) {
     node_t* tail = NULL;
         
     for (int i = 0; i < size; i++){
-        node_t* newNode = makeNode(years[i], wins[i], NULL);
+        node_t* newNode = makeNode(wins[i], year[i], NULL);
         if (i == 0){  // head: year0 win0. tail: year0, win0. 
             head = newNode; 
             tail = newNode;
