@@ -120,6 +120,9 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
     return 0;
 
 }
+void remove_wins_helper(node_t* pointer){
+    free(pointer->wins);
+}
 
 int remove_year(lst_t* list, int year_to_remove){
     node_t* pointer = list->head;
@@ -140,6 +143,7 @@ int remove_year(lst_t* list, int year_to_remove){
         else {
             list->head = pointer->next; //prev = null which is the first element. 
         }
+        remove_wins_helper(pointer);
         free(pointer);
         list->size--;
         return 1;
@@ -147,6 +151,7 @@ int remove_year(lst_t* list, int year_to_remove){
     }
     return 0;
 }
+
 
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
@@ -178,6 +183,15 @@ int main()
     if (result == 1){
         printf("Inserted\n");
         printList(newlist->head);
+    }else{
+        printf("failed");
+    }
+    int year_to_remove = 2018; 
+    int result = remove_year(newlist, year_to_remove);
+    if (result == 1){
+        printf("removed");
+        printList(newlist->head);
+
     }else{
         printf("failed");
     }
