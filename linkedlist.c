@@ -88,13 +88,13 @@ void free_list(node_t* head){
 }
 
 
-note_t* find_year(lst_t* list, int year){
+node_t* find_year(lst_t* list, int year){
     node_t* pointer = list->head; 
     if (pointer == NULL){
         return NULL;
     }
     while (pointer != NULL){
-        if (pinter->year == year){
+        if (pointer->year == year){
             return pointer;
         }
         pointer = pointer->next;
@@ -110,7 +110,7 @@ int main()
     int test_years[5] = {2018, 2017, 2016, 2015, 2014};
     int test_wins[5] = {108, 93, 93, 78, 71};
 
-    list_t* newlist = create_list();
+    lit_t* newlist = create_list();
     for (int i = 0; i < 5; i++) {
         add_node(newlist, test_years[i], test_wins[i]);
     }
