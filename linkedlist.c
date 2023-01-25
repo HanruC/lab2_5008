@@ -120,9 +120,9 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
     return 0;
 
 }
-void remove_wins_helper(int wins){
-    free(wins);
-}
+//void remove_wins_helper(int wins){
+    //free(wins);
+//}
 
 int remove_year(lst_t* list, int year_to_remove){
     node_t* pointer = list->head;
@@ -143,7 +143,7 @@ int remove_year(lst_t* list, int year_to_remove){
         else {
             list->head = pointer->next; //prev = null which is the first element. 
         }
-        remove_wins_helper(pointer->wins);
+        free(pointer->wins);
         free(pointer);
         list->size--;
         return 1;
