@@ -187,8 +187,8 @@ int main()
         printf("failed");
     }
     int year_to_remove = 2018; 
-    int result = remove_year(newlist, year_to_remove);
-    if (result == 1){
+    int result2 = remove_year(newlist, year_to_remove);
+    if (result2 == 1){
         printf("removed");
         printList(newlist->head);
 
