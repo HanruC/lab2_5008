@@ -45,7 +45,7 @@ void add_nodes(lst_t* list, int year, int wins){
     list->size++;
 }
 
-node_t* build_list(int* wins, int* years, int size) { 
+node_t* build_list(int* wins, int* year, int size) { 
     node_t* head = NULL; 
     node_t* tail = NULL;
         
