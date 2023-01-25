@@ -189,7 +189,7 @@ int main()
     int year_to_remove = 2018; 
     int result2 = remove_year(newlist, year_to_remove);
     if (result2 == 1){
-        printf("removed");
+        printf("removed\n");
         printList(newlist->head);
 
     }else{
