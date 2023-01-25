@@ -101,6 +101,25 @@ node_t* find_year(lst_t* list, int year){
     }
     return NULL;
 }
+// check the year stored in the list 
+// compare to the year to find. 
+int insert_year(lst_t* list, int year_to_find, int year, int wins){
+    node_t* pointer = list->head; 
+    node_t* prev = NULL;
+    if (pointer == NULL){
+        return 0;
+    }
+    while (pointer != NULL){
+        if (pointer->year == year_to_find){
+            node_t* newNode = makeNode(wins, year, pointer->next);  // _ _ (yeartofind) (insert here) _ _ _ _ 
+            pointer->next = newNode;
+            list->size++;
+            return 1;
+        }
+        pointer = pointer->next; // check the next one if not found. 
+    }
+
+}
 
 // TODO: Write your functions here
 // There should be 1.) create_list 2.) print_list 3.) free_list
@@ -119,12 +138,22 @@ int main()
 
     int search_year = 2016;
     node_t* found_year = find_year(newlist, search_year);
-    //if (found_year != NULL) {
-        //printf("Year: %d, Wins: %d\n", found_year->year, found_year->wins);
-    //} else {
-        //printf("Year %d not found in the list.\n", search_year);
-    //}
+    if (found_year != NULL) {
 
+        printf("Year: %d, Wins: %d\n", found_year->year, found_year->wins);
+    } else {
+        printf("Year %d not found in the list.\n", search_year);
+    }
+    int year_to_find = 2016;
+    int new_year = 2013;
+    int new_wins = 15;
+    int result = insert_year(newlist, year_to_find, new_year, new_wins);
+    if (result == 1){
+        printf("Inserted");
+        printList(newlist->head);
+    }else{
+        printf("failed");
+    }
     free_list(newlist->head);
     free(newlist);
     return 0;
