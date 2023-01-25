@@ -143,7 +143,7 @@ int remove_year(lst_t* list, int year_to_remove){
         else {
             list->head = pointer->next; //prev = null which is the first element. 
         }
-        free(pointer->wins);
+        //free(pointer->wins);
         free(pointer);
         list->size--;
         return 1;
