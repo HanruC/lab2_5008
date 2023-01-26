@@ -10,6 +10,7 @@ typedef struct node {
 typedef struct lst {
     int size;
     node_t* head;
+    node_t* next;
 }lst_t;
 
 // create a list to store each node in the list. 
@@ -38,10 +39,12 @@ node_t* makeNode(int wins, int year, node_t* next) {
 //set the head of the list as the newNode 
 //then newNode->next will be the list head 
 void add_nodes(lst_t* list, int year, int wins){
-    node_t* newNode = makeNode(year, wins,  NULL);
-    newNode->next = list->head; //1. new->next:NULL (list->head was set to be null at first) 2. new->next: the first makenode. 3. new->next: the second makenode. 
-    list->head = newNode; // 1. list->head set to be the first makenode. 2. the second makenode. 3. the third makenode. 
+    node_t* newNode = makeNode(wins, year,  NULL);
+    //newNode->next = list->head; //1. new->next:NULL (list->head was set to be null at first) 2. new->next: the first makenode. 3. new->next: the second makenode. 
+    //list->head = newNode; // 1. list->head set to be the first makenode. 2. the second makenode. 3. the third makenode. 
     // 5 4 3 2 1 from the end insert the front. 
+    list->next = newNode->next;
+    list->head = newNode;
     list->size++;
 }
 
