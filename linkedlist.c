@@ -95,7 +95,6 @@ void free_list(node_t* head){
         pointer = pointer->next;
         free(storage);
     }
-    head = NULL;
 }
 
 
