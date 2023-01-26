@@ -121,7 +121,7 @@ int insert_year(lst_t* list, int year_to_find, int year, int wins){
     }
     while (pointer != NULL){
         if (pointer->year == year_to_find){
-            node_t* newNode = makeNode(wins, year, pointer->next);  // _ _ (yeartofind) (insert here) _ _ _ _ 
+            node_t* newNode = makeNode(year, wins, pointer->next);  // _ _ (yeartofind) (insert here) _ _ _ _ 
             pointer->next = newNode;
             list->size++;
             return 1;
