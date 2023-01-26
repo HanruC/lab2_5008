@@ -24,7 +24,7 @@ lst_t* newList(){
     return newList;
 }
 
-node_t* makeNode(int wins, int year, node_t* next) {
+node_t* makeNode(int year, int wins, node_t* next) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t)); 
     if (newNode == NULL){
         return NULL;
@@ -39,12 +39,20 @@ node_t* makeNode(int wins, int year, node_t* next) {
 //set the head of the list as the newNode 
 //then newNode->next will be the list head 
 void add_nodes(lst_t* list, int year, int wins){
-    node_t* newNode = makeNode(wins, year,  NULL);
+    node_t* newNode = makeNode(year, wins,  NULL);
     //newNode->next = list->head; //1. new->next:NULL (list->head was set to be null at first) 2. new->next: the first makenode. 3. new->next: the second makenode. 
     //list->head = newNode; // 1. list->head set to be the first makenode. 2. the second makenode. 3. the third makenode. 
-    // 5 4 3 2 1 from the end insert the front. 
-    list->next = newNode->next;
-    list->head = newNode;
+    // 5 4 3 2 1 from the end insert the front.
+    if (list->head == NULL){
+        list->head = newNode;
+    }
+    else{
+        node_t* pointer = list->head;
+        while(pointer->next != NULL){
+            pointer = pointer->next;
+        }
+        pointer->next = newNode;
+    }
     list->size++;
 }
 
